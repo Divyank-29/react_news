@@ -18,6 +18,7 @@ const useNewsData = (category, searchTerm) => {
         const data = await response.json();
         
         setNewsData(data.articles)
+        console.log(data.articles)
         setLoading(false);
         
       } catch (error) {
