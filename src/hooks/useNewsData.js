@@ -11,7 +11,7 @@ const useNewsData = (category, searchTerm) => {
         setLoading(true);
 
         
-        const apiUrl = `https://newsapi.org/v2/everything?apikey=${3570987c3a9d49cd9be308fb99fbc0e0}`;
+        const apiUrl = `https://newsapi.org/v2/everything?apikey=3570987c3a9d49cd9be308fb99fbc0e0;
         const searchQuery = searchTerm || category || "news"; 
         const url = `${apiUrl}&q=${searchQuery}`;
         const response = await fetch(url);
