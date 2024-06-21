@@ -42,7 +42,7 @@ const NewsList = (props) => {
         {currentArticles?.map((article) => (
           <Col xs={12} md={6} lg={4} key={article.url}>
             <Card>
-              <Card.Img src={article.urlToImage} variant="top" />
+              <Card.Img src={article.image} variant="top" />
               <Card.Body>
                 <Card.Title>{article.title}</Card.Title>
                 <Card.Text>{article.description}</Card.Text>

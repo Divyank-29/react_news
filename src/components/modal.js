@@ -11,7 +11,7 @@ const ArticleModal = ({ show, onHide, article }) => {
          <Modal.Title>{article.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <img src={article.urlToImage} className="img-fluid mb-3" alt={article.title} />
+        <img src={article.image} className="img-fluid mb-3" alt={article.title} />
         <p><b>Author:</b> {article.author}</p>
         <p>{article.content}</p>
       </Modal.Body>

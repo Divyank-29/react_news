@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 
+
 const useNewsData = (category, searchTerm) => {
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
 
   useEffect(() => {
     async function fetchNewsData() {
@@ -11,13 +13,16 @@ const useNewsData = (category, searchTerm) => {
         setLoading(true);
 
         
-        const apiUrl = `https://newsapi.org/v2/everything?apikey=3570987c3a9d49cd9be308fb99fbc0e0`;
-        const searchQuery = searchTerm || category || "news"; 
-        const url = `${apiUrl}&q=${searchQuery}`;
+        const apiKey = "ca7a99229a7f211fde80e4664e488db1";
+        const apiUrl = `https://gnews.io/api/v4/top-headlines?token=${apiKey}`;
+        const categoryParam = category ? `&topic=${category}` : "";
+        const searchParam = searchTerm ? `&q=${searchTerm}` : "";
+        const url = apiUrl + categoryParam + searchParam;
         const response = await fetch(url);
         const data = await response.json();
         
         setNewsData(data.articles)
+        console.log(data.articles);
         setLoading(false);
         
       } catch (error) {
